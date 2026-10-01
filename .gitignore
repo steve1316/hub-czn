@@ -93,3 +93,6 @@ docs/superpowers/
 # Local scripts
 .scripts/
 .builds/
+
+# Extracted game client data (Setup page default output)
+client_db/

@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 
 from api.auth import ASSETS_PREFIX, TokenAuthMiddleware
 from api.shutdown import watch_parent
-from api.routes import status, data, ws, setup, capture, rescue, scoring, combatants, optimize, about, autoscroll, simulate, cards, battle, deck_builder
+from api.routes import status, data, ws, setup, capture, rescue, scoring, combatants, optimize, about, autoscroll, simulate, cards, battle, deck_builder, game_data_extract
 
 # Tauri generates this and passes it in, so it never has to be read back off our stdout. Unset means
 # "make one up", which is what happens when running standalone. An explicit empty value turns the
@@ -64,6 +64,7 @@ def create_app(token: str | None = None) -> FastAPI:
     app.include_router(cards.router, prefix="/api", tags=["cards"])
     app.include_router(battle.router, prefix="/api", tags=["battle"])
     app.include_router(deck_builder.router, prefix="/api", tags=["deck-builder"])
+    app.include_router(game_data_extract.router, prefix="/api", tags=["game-data"])
     return app
 
 
