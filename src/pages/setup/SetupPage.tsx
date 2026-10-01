@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { api } from '@/lib/api'
 import { CheckCircle, XCircle, Loader2, ChevronDown, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { GameDataCard } from './GameDataCard'
 
 function StatusIcon({ ok }: { ok: boolean }) {
   return ok
@@ -240,6 +241,8 @@ export function SetupPage() {
           </div>
         </div>
       )}
+
+      <GameDataCard />
 
       <div className="rounded-lg bg-[#181818] border border-[#282828] overflow-hidden">
         <button

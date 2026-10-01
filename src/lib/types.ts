@@ -91,6 +91,50 @@ export interface RemoveCertResponse {
   removed_from: string[]
 }
 
+/** Paths the Setup page's game data card edits, as saved by the sidecar with defaults filled in. */
+export interface ExtractSettings {
+  /** Full path to ChaosZeroNightmareRipper-CLI.exe. Empty until the user picks one. */
+  cli_path: string
+  /** Full path to the game's archive, `manifest.ssra` or the older `data.pack`. Auto-detected when nothing valid is saved. */
+  pack_path: string
+  /** Folder the client data is extracted into. */
+  out_dir: string
+}
+
+/** One extraction or add_character.py run. */
+export interface ExtractJob {
+  /** What is running. An extraction that chains into the dev dry run switches to 'dry_run' for that step. */
+  kind: 'extract' | 'dry_run' | 'apply'
+  /** Where the job is. */
+  state: 'running' | 'ok' | 'failed' | 'cancelled'
+  /** Finished output lines, the last 500 at most. */
+  log: string[]
+  /** The latest progress line, empty between steps. */
+  progress: string
+  /** Exit code of the last process, null until one finishes. */
+  exit_code: number | null
+  /** Plain-language outcome, empty while running. */
+  message: string
+}
+
+/** Response of `/api/game-data/extract/status`. */
+export interface ExtractStatus {
+  /** The saved paths. */
+  settings: ExtractSettings
+  /** The archive found through the registry or the default install path, null if none was. */
+  detected_pack_path: string | null
+  /** True when running from source, where add_character.py can write into the repo. */
+  dev_mode: boolean
+  /** The CZN_CLIENT_DB value when set. It overrides the saved output folder. */
+  env_override: string | null
+  /** The client data folder the app is reading right now. */
+  active_client_dir: string
+  /** Whether that folder has both `db/` and `text/en/text.json`. */
+  active_ready: boolean
+  /** The current or last job, null if none ran since the sidecar started. */
+  job: ExtractJob | null
+}
+
 export interface CaptureStatus {
   running: boolean
   region: 'global' | 'asia'
