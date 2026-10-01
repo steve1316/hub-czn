@@ -5,19 +5,60 @@ It is not shipped with the app - it comes from unpacking the game's own data fil
 do not have it. The optimizer's precise damage classifier, the effect indexes and the character
 extraction scripts all read it, and each falls back quietly when it is absent.
 
-Set CZN_CLIENT_DB to the extracted output folder, the one containing `db/` and `text/`.
+Set CZN_CLIENT_DB to the extracted output folder, the one containing `db/` and `text/`. Without it, the
+folder the Setup page last extracted into is used.
 """
 
 import json
 import os
+import sys
 from functools import lru_cache
 from pathlib import Path
+from typing import Callable
 
 ENV_VAR = "CZN_CLIENT_DB"
+
+# The repo root when running from source. Frozen builds have no repo, so this is only meaningful in dev.
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# The app's own folder: the install folder when frozen, `api/` from source. Mirrors `BASE_DIR` in api/capture/constants.py,
+# which cannot be imported here because the capture package pulls in mitmproxy.
+APP_DIR = Path(sys.executable).parent if getattr(sys, "frozen", False) else REPO_ROOT / "api"
+
+# Settings saved by the Setup page's extraction card, beside the other snapshots-folder settings.
+SETTINGS_FILE = APP_DIR / "snapshots" / "game_data_extract.json"
 
 # The original author's path. Kept last so their machine keeps working with no configuration, but it
 # means every other machine silently got an empty index before this was configurable.
 _LEGACY_OUTPUT = Path(r"C:\Users\soste\Downloads\output")
+
+# Callbacks from modules that cache things derived from the client data, run by `reset_caches()`.
+_reset_hooks: list[Callable[[], None]] = []
+
+
+def load_extract_settings() -> dict:
+    """
+    The settings saved by the extraction card.
+
+    Returns:
+        The saved fields, or an empty dict when the file is missing or unreadable.
+    """
+    try:
+        data = json.loads(SETTINGS_FILE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def save_extract_settings(settings: dict) -> None:
+    """
+    Replace the settings saved by the extraction card.
+
+    Args:
+        settings: The full set of saved fields.
+    """
+    SETTINGS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    SETTINGS_FILE.write_text(json.dumps(settings, indent=2), encoding="utf-8")
 
 
 def client_output_dir() -> Path:
@@ -25,16 +66,29 @@ def client_output_dir() -> Path:
     Root of the extracted client data, holding `db/` and `text/`.
 
     Returns:
-        The path from CZN_CLIENT_DB, else a `client_db` folder beside the repo, else the legacy one.
-        The path is not guaranteed to exist - callers check.
+        The path from CZN_CLIENT_DB, else the saved extraction folder if it holds a `db/`, else `default_extract_dir()`
+        if it exists, else the legacy one. Not guaranteed to exist - callers check.
     """
     env = os.environ.get(ENV_VAR, "").strip()
     if env:
         return Path(env)
-    repo_local = Path(__file__).resolve().parent.parent / "client_db"
-    if repo_local.exists():
-        return repo_local
+    saved = str(load_extract_settings().get("out_dir") or "").strip()
+    if saved and (Path(saved) / "db").is_dir():
+        return Path(saved)
+    default = default_extract_dir()
+    if default.exists():
+        return default
     return _LEGACY_OUTPUT
+
+
+def default_extract_dir() -> Path:
+    """
+    Where the Setup page extracts to when the user has not picked a folder.
+
+    Returns:
+        `client_db/` in the install folder when frozen, else in the repo root.
+    """
+    return (APP_DIR if getattr(sys, "frozen", False) else REPO_ROOT) / "client_db"
 
 
 def client_db_dir() -> Path:
@@ -148,3 +202,22 @@ def text_index(root: Path | None = None) -> dict[str, str]:
     """
     path = (root / "text" / "en" / "text.json") if root is not None else client_text_file()
     return _text_index(str(path))
+
+
+def on_reset(hook: Callable[[], None]) -> None:
+    """
+    Register a callback that drops a cache built from the client data.
+
+    Args:
+        hook: Called with no arguments by `reset_caches()`.
+    """
+    _reset_hooks.append(hook)
+
+
+def reset_caches() -> None:
+    """Drop everything read from the client so the next read picks up a fresh extraction."""
+    _load.cache_clear()
+    _index.cache_clear()
+    _text_index.cache_clear()
+    for hook in _reset_hooks:
+        hook()

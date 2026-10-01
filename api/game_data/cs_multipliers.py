@@ -19,7 +19,6 @@ from pathlib import Path
 
 from api.client_db import client_db_dir
 
-_DEFAULT_CLIENT_DB = client_db_dir()
 _CS_SHARDS = (
     "cs(monster)@skill_eff.json",
     "cs(card1)@skill_eff.json",
@@ -68,8 +67,8 @@ def _strip_instance_suffix(inst_id: str) -> str:
 
 
 class CSMultiplierIndex:
-    def __init__(self, client_db_path: Path = _DEFAULT_CLIENT_DB):
-        self._db_path = Path(client_db_path)
+    def __init__(self, client_db_path: Path | None = None):
+        self._db_path = Path(client_db_path) if client_db_path is not None else client_db_dir()
 
     @cached_property
     def _by_cs_id(self) -> dict[str, list[DamageModifier]]:
