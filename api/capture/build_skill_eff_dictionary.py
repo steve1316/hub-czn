@@ -20,7 +20,6 @@ from pathlib import Path
 
 from api.client_db import client_db_dir
 
-CLIENT_DB = client_db_dir()
 OUTPUT_PATH = Path(__file__).parent.parent / "snapshots" / "skill_eff_dictionary.json"
 
 
@@ -113,7 +112,7 @@ def load_observed_skill_effs(jsonl_dir: Path) -> list[str]:
 def main():
     import os
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    result = parse_skill_eff_files(CLIENT_DB)
+    result = parse_skill_eff_files(client_db_dir())
 
     snap_dir = Path(os.environ.get("LOCALAPPDATA", "")) / "hub-czn" / "snapshots"
     observed_types = load_observed_skill_effs(snap_dir)

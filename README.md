@@ -10,6 +10,27 @@ the machine, and needed mitmproxy installed separately. Those are the things bei
 
 Changes are not sent upstream. For what the app does and how to use it, see the upstream README.
 
+## Building
+
+Needs Python 3.12, Node.js 22 and the Rust toolchain, the same versions the release workflow uses. From the repo root:
+
+```
+.\build.bat
+```
+
+It syncs the version from `src-tauri/tauri.conf.json`, builds the Python sidecar with PyInstaller,
+builds the frontend, then bundles two installers: an MSI in `src-tauri\target\release\bundle\msi\` and
+a setup `.exe` in `src-tauri\target\release\bundle\nsis\`. Use it rather than `npm run tauri build` on
+its own, which fails the sidecar version check.
+
+To run from source instead, open an Administrator terminal in the repo root and run:
+
+```
+npm start
+```
+
+It starts the Python sidecar and the app together, and stops the sidecar when you close the app.
+
 ## Changelog
 
 ### 2026-09-05

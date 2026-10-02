@@ -8,6 +8,7 @@ import type {
   CardEntry, CardCharacter, BattleRecord, BattleAnalytics,
   BattleOverview,
   DeckBuilderCombatantResponse,
+  ExtractStatus, ExtractSettings,
 } from './types'
 
 let _port: number = Number(import.meta.env.VITE_API_PORT ?? 7842)
@@ -147,6 +148,18 @@ export const api = {
 
   removeCertificate: () =>
     request<RemoveCertResponse>('/api/setup/remove-certificate', { method: 'POST' }),
+
+  extractStatus: () => request<ExtractStatus>('/api/game-data/extract/status'),
+
+  saveExtractConfig: (body: Partial<ExtractSettings>) =>
+    request<ExtractSettings>('/api/game-data/extract/config', { method: 'POST', body: JSON.stringify(body) }),
+
+  startExtract: () => request<{ ok: boolean }>('/api/game-data/extract/start', { method: 'POST' }),
+
+  cancelExtract: () => request<{ ok: boolean }>('/api/game-data/extract/cancel', { method: 'POST' }),
+
+  applyCharacters: (dryRun: boolean) =>
+    request<{ ok: boolean }>('/api/game-data/apply', { method: 'POST', body: JSON.stringify({ dry_run: dryRun }) }),
 
   captureStatus: () => request<CaptureStatus>('/api/capture/status'),
 

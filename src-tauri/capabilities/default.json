@@ -9,6 +9,7 @@
     "shell:allow-spawn",
     "shell:allow-open",
     "opener:allow-open-url",
+    "dialog:allow-open",
     "dialog:allow-save",
     "fs:allow-write-text-file"
   ]

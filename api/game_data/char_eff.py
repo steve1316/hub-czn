@@ -16,9 +16,7 @@ from api.game_data.eff_instances import EffInstanceIndex
 from api.simulator.replay.char_resolver import CardExpectation, CharResolver
 
 
-from api.client_db import client_db_dir
-
-_CLIENT_DB_DEFAULT = client_db_dir()
+from api.client_db import client_db_dir, on_reset
 
 _DAMAGE_EFF_TYPES = (
     "SKILL_EFF_DMG",
@@ -39,12 +37,24 @@ def _get_resolver() -> CharResolver:
 
 
 def _get_default_eff_index() -> Optional[EffInstanceIndex]:
-    """Lazy-load the default EffInstanceIndex from the hardcoded CLIENT_DB path.
+    """Lazy-load the default EffInstanceIndex from the configured client DB.
     Returns None if the path doesn't exist (e.g., on a fresh dev machine)."""
     global _DEFAULT_EFF_INDEX
-    if _DEFAULT_EFF_INDEX is None and _CLIENT_DB_DEFAULT.exists():
-        _DEFAULT_EFF_INDEX = EffInstanceIndex(_CLIENT_DB_DEFAULT)
+    if _DEFAULT_EFF_INDEX is None:
+        db = client_db_dir()
+        if db.exists():
+            _DEFAULT_EFF_INDEX = EffInstanceIndex(db)
     return _DEFAULT_EFF_INDEX
+
+
+def reset_default_eff_index() -> None:
+    """Forget the loaded index and every result derived from it, so a new extraction is picked up."""
+    global _DEFAULT_EFF_INDEX
+    _DEFAULT_EFF_INDEX = None
+    _damage_card_ids_via_eff_index.cache_clear()
+    _damage_card_eff_pct_map.cache_clear()
+    best_damage_eff_for.cache_clear()
+    best_damage_card_target_count.cache_clear()
 
 
 def _default_lookup_char_info_by_name(name: str):
@@ -210,3 +220,6 @@ def best_damage_card_target_count(char_name: str,
     if not counts:
         return 1
     return max(counts)
+
+
+on_reset(reset_default_eff_index)
