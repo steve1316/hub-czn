@@ -28,9 +28,9 @@ needs_client = pytest.mark.skipif(
     reason="game client DB or its text catalogue not available",
 )
 
-# Emilie went live before the client listed her passive's effect rows, so her `stats` were taken from
-# her own description rather than derived. See the note above her entry in partners.py.
-STATS_EXCEPTIONS = {30118}
+# Partners whose `stats` cannot be derived because the client does not list their passive's effect rows yet. Emilie (30118)
+# was one until late September 2026, when the client caught up and matched her hand-written values exactly.
+STATS_EXCEPTIONS: set[int] = set()
 
 
 # //////////////////////////////////////////////////////////////////////////////////////////////////

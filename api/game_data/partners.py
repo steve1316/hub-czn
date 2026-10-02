@@ -761,9 +761,6 @@ PARTNERS = {
         "ego_cost": 3,
         "ego_desc": "Gain 1 AP\n3 Paralytic Poison to all enemies.",
     },
-    # Emilie went live before the client listed her passive's effect rows, so `stats` could not be
-    # derived the way every other partner's was. The Attack bonus is taken from her own description
-    # and the ladder every other grade 5 partner uses. Re-check it once the client catches up.
     30118: {
         "name": "Emilie",
         "grade": 5,
