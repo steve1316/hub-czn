@@ -26,7 +26,9 @@ GROWTH_MATERIAL_TO_CLASS = {
     "s_hunter": "Hunter",
     "s_ranger": "Ranger",
     "s_striker": "Striker",
+    # The client renamed "s_knight" to "s_vanguard" in late September 2026. The old key stays for older dumps.
     "s_knight": "Vanguard",
+    "s_vanguard": "Vanguard",
     "s_psionic": "Psionic",
 }
 
