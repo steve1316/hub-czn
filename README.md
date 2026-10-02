@@ -23,6 +23,14 @@ builds the frontend, then bundles two installers: an MSI in `src-tauri\target\re
 a setup `.exe` in `src-tauri\target\release\bundle\nsis\`. Use it rather than `npm run tauri build` on
 its own, which fails the sidecar version check.
 
+To run from source instead, open an Administrator terminal in the repo root and run:
+
+```
+npm start
+```
+
+It starts the Python sidecar and the app together, and stops the sidecar when you close the app.
+
 ## Changelog
 
 ### 2026-09-05
