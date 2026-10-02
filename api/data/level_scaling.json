@@ -1,5 +1,5 @@
 {
-  "c_lv_knight_ssr": {
+  "c_lv_vanguard_ssr": {
     "1": {
       "ATK": 0,
       "DEF": 0,
@@ -311,7 +311,7 @@
       "HP": 321
     }
   },
-  "c_lv_knight_sr": {
+  "c_lv_vanguard_sr": {
     "1": {
       "ATK": 0,
       "DEF": 0,

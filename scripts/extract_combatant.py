@@ -33,7 +33,9 @@ from entry_format import format_entry  # noqa: E402
 # link_char_growth_material_id is "c_{class_key}_{color_key}".
 GROWTH_CLASS_TO_CLASS = {
     "controller": "Controller",
+    # The client renamed "knight" to "vanguard" in late September 2026. The old key stays for older dumps.
     "knight": "Vanguard",
+    "vanguard": "Vanguard",
     "striker": "Striker",
     "ranger": "Ranger",
     "hunter": "Hunter",

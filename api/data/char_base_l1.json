@@ -54,7 +54,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1008",
     "friendship_group": "friendship_bonus_no_bg"
@@ -78,7 +78,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1010",
     "friendship_group": "friendship_bonus_no_bg"
@@ -90,7 +90,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_sr",
+    "level_group": "c_lv_vanguard_sr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1010",
     "friendship_group": "friendship_bonus_no_bg"
@@ -114,7 +114,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_sr",
+    "level_group": "c_lv_vanguard_sr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1017",
     "friendship_group": "friendship_bonus_no_bg"
@@ -198,7 +198,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_sr",
+    "level_group": "c_lv_vanguard_sr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1028",
     "friendship_group": "friendship_bonus_no_bg"
@@ -210,7 +210,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -318,7 +318,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -342,7 +342,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1055",
     "friendship_group": "friendship_bonus_no_bg"
@@ -378,7 +378,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -426,7 +426,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -450,7 +450,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -462,7 +462,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -474,7 +474,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -486,7 +486,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -510,7 +510,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -522,7 +522,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -582,7 +582,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1010",
     "friendship_group": "friendship_bonus_no_bg"
@@ -678,7 +678,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_sr",
+    "level_group": "c_lv_vanguard_sr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1017",
     "friendship_group": "friendship_bonus_no_bg"
@@ -762,7 +762,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1008",
     "friendship_group": "friendship_bonus_no_bg"
@@ -774,7 +774,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_sr",
+    "level_group": "c_lv_vanguard_sr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1028",
     "friendship_group": "friendship_bonus_no_bg"
@@ -786,7 +786,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_30047",
     "friendship_group": "friendship_bonus_no_bg"
@@ -858,7 +858,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -870,7 +870,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "none",
     "friendship_group": "friendship_bonus_no_bg"
@@ -882,7 +882,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_30047",
     "friendship_group": "friendship_bonus_no_bg"
@@ -990,7 +990,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1055",
     "friendship_group": "friendship_bonus_no_bg"
@@ -1014,7 +1014,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1027",
     "friendship_group": "friendship_bonus_no_bg"
@@ -1026,7 +1026,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1027",
     "friendship_group": "friendship_bonus_no_bg"
@@ -1038,7 +1038,7 @@
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
-    "level_group": "c_lv_knight_ssr",
+    "level_group": "c_lv_vanguard_ssr",
     "ascend_group": "dev_ascend",
     "limit_break_group": "limit_1027",
     "friendship_group": "friendship_bonus_no_bg"
