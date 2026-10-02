@@ -84,15 +84,15 @@
     "friendship_group": "friendship_bonus_no_bg"
   },
   "1012": {
-    "atk": 125,
-    "def": 51,
-    "hp": 94,
+    "atk": 148,
+    "def": 42,
+    "hp": 83,
     "cri": 3.0,
     "cri_dmg": 125.0,
     "weak_ego_dmg_rate": 125.0,
     "level_group": "c_lv_vanguard_sr",
     "ascend_group": "dev_ascend",
-    "limit_break_group": "limit_1010",
+    "limit_break_group": "limit_1012",
     "friendship_group": "friendship_bonus_no_bg"
   },
   "1015": {

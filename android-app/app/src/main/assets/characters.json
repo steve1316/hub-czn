@@ -184,6 +184,11 @@
     "rarity": 5,
     "kind": "Combatant"
   },
+  "Anika": {
+    "res_id": 1012,
+    "rarity": 4,
+    "kind": "Combatant"
+  },
   "Ivy": {
     "res_id": 1025,
     "rarity": 5,
